@@ -1,0 +1,73 @@
+add_newline = true
+scan_timeout = 10
+
+[character]
+success_symbol = "[➜](bold green)" # コマンド成功時
+error_symbol = "[➜](bold red)"    #コマンド失敗時
+
+[directory]
+truncation_length = 100
+truncate_to_repo = false
+truncation_symbol = "…/"
+
+[username]
+style_user = "white bold"
+style_root = "black bold"
+format = "[$user🌱]($style) "
+disabled = false
+show_always = true
+
+[time]
+disabled = false
+format = "[$time]($style) "
+use_12hr = false
+
+### git
+[git_status]
+disabled = true
+
+[git_branch]
+symbol = " "
+# symbol = " "
+
+### language
+[aws]
+symbol = "  "
+[conda]
+symbol = " "
+[dart]
+symbol = " "
+[docker_context]
+symbol = " "
+[elixir]
+symbol = " "
+[elm]
+symbol = " "
+[golang]
+symbol = " "
+[hg_branch]
+symbol = " "
+[java]
+symbol = " "
+[julia]
+symbol = " "
+[nim]
+symbol = " "
+[nix_shell]
+symbol = " "
+[package]
+symbol = " "
+[perl]
+symbol = " "
+[php]
+symbol = " "
+[python]
+symbol = " "
+[ruby]
+symbol = " "
+[rust]
+symbol = " "
+[scala]
+symbol = " "
+[swift]
+symbol = "ﯣ "
