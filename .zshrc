@@ -11,6 +11,8 @@ alias brewsst='brew services start'
 alias brewssp='brew services stop'
 alias bror='bin/rails'
 alias brewi='brew install'
+alias brewud='brew update'
+alias brewug='brew upgrade'
 
 # 履歴保存管理
 HISTFILE=$ZDOTDIR/.zsh-history
