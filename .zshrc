@@ -112,6 +112,9 @@ function find_cd() {
 zle -N find_cd
 bindkey '^X' find_cd
 
+### 重複パスを登録しない
+typeset -U path PATH
+
 #### rbenvを初期化するためのスクリプト
 eval "$(rbenv init -)"
 
