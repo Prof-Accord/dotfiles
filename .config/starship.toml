@@ -1,6 +1,6 @@
 add_newline = true
 scan_timeout = 100
-command_timeout = 100
+command_timeout = 1000
 
 [character]
 success_symbol = "[➜](bold green)" # コマンド成功時
@@ -27,48 +27,61 @@ use_12hr = false
 [git_status]
 disabled = true
 
-[git_branch]
-symbol = " "
-# symbol = " "
-
 ### language
-[aws]
-symbol = "  "
+## シンボル変更
 [conda]
-symbol = " "
+symbol = "  "
+
 [dart]
-symbol = " "
+symbol = "  "
+
 [docker_context]
-symbol = " "
+symbol = "  "
+
 [elixir]
-symbol = " "
-[elm]
-symbol = " "
+symbol = "  "
+
+[git_branch]
+symbol = " "
+
 [golang]
-symbol = " "
+symbol = "  "
+
 [hg_branch]
-symbol = " "
+symbol = " "
+
 [java]
-symbol = " "
+symbol = "  "
+
 [julia]
-symbol = " "
-[nim]
-symbol = " "
+symbol = "  "
+
+[nodejs]
+symbol = "  "
+
 [nix_shell]
-symbol = " "
-[package]
-symbol = " "
+symbol = "  "
+
 [perl]
-symbol = " "
+symbol = "  "
+
 [php]
-symbol = " "
+symbol = "  "
+
 [python]
-symbol = " "
+symbol = "  "
+
 [ruby]
-symbol = " "
+symbol = "  "
+
 [rust]
-symbol = " "
+symbol = "  "
+
 [scala]
-symbol = " "
+symbol = "  "
+
+[shlvl]
+symbol = "  "
+
 [swift]
 symbol = "ﯣ "
