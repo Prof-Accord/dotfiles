@@ -1,21 +1,32 @@
 ### zsh本体の設定
 
 # エイリアス
+## ls
+alias ls='ls --color=auto'
+alias ls='ls -G'
+alias ll='ls -alF'
+alias ll='ls -lh'
+alias ll='ls -l'
+alias la='ls -A'
+alias la='ls -a'
+alias l='ls -CF'
+## git
+alias g='git'
+alias ga='git add'
+alias gd='git diff'
+alias gs='git status'
+alias gp='git push'
+alias gb='git branch'
+alias gco='git checkout'
+alias gf='git fetch'
+alias gc='git commit'
+# bundle
 alias b='bundle'
 alias be='bundle exec'
+alias bi='bundle install'
+alias bo='bundle outdated'
 alias bu='bundle update'
-alias vimzsh='vi ~/.zshrc'
-alias sourcezsh='source ~/.zshrc'
-alias -g @g='| grep'
-alias -g @l='| less'
-alias brewsst='brew services start'
-alias brewssp='brew services stop'
-alias bror='bin/rails'
-alias brewi='brew install'
-alias brewupd='brew update'
-alias brewupg='brew upgrade'
-alias brewd='brew doctor'
-alias lsa='ls -1a'
+alias rc='bundle exec rails c'
 
 # 履歴保存管理
 HISTFILE=$ZDOTDIR/.zsh-history
@@ -38,7 +49,7 @@ zstyle ':completion:*:default' menu select=1
 
 # lsコマンドで色分けする
 zstyle ':completion:*' list-colors $LSCOLORS
- 
+
 ### Zinitの設定
 # Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
