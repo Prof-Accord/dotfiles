@@ -28,14 +28,31 @@ alias bo='bundle outdated'
 alias bu='bundle update'
 alias rc='bundle exec rails c'
 
-# 履歴保存管理
-HISTFILE=$ZDOTDIR/.zsh-history
-HISTSIZE=100000
-SAVEHIST=1000000
-
+### zsh-completionsで補完機能をより強力にする
 # 他のzshと履歴を共有
 setopt inc_append_history
+# 同時に起動しているzshの間でhistoryを共有する
 setopt share_history
+# historyに保存するときに余分なスペースを削除する
+setopt hist_reduce_blanks
+# 同じコマンドをhistoryに残さない
+setopt hist_ignore_all_dups
+# 文字コードを指定v
+export LANG=ja_JP.UTF-8
+# 日本語ファイル名を表示可能にする
+setopt print_eight_bit
+# cd無しでもディレクトリ移動
+setopt auto_cd
+# cd -で以前移動したディレクトリを表示
+setopt auto_pushd
+# コマンドのスペルをミスして実行した場合に候補を表示
+setopt correct
+# 履歴の保存先ファイル指定
+HISTFILE=~/.zsh_history
+# メモリに保存される履歴の件数
+export HISTSIZE=1000
+# 履歴ファイルに保存される履歴の件数
+export SAVEHIST=10000
 
 # 補完機能
 autoload -Uz compinit && compinit
@@ -125,6 +142,14 @@ function find_cd() {
 zle -N find_cd
 bindkey '^X' find_cd
 
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
 ### 重複パスを登録しない
 typeset -U path PATH
 
@@ -133,3 +158,4 @@ eval "$(rbenv init -)"
 
 ### starship初期化するためのスクリプト
 eval "$(starship init zsh)"
+
