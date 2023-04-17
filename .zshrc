@@ -128,8 +128,11 @@ bindkey '^X' find_cd
 ### 重複パスを登録しない
 typeset -U path PATH
 
-#### rbenvを初期化するためのスクリプト
+### PATHにhomebrewを追加する
+export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
+
+#### rbenvを初期化
 eval "$(rbenv init -)"
 
-### starship初期化するためのスクリプト
+### starship初期化
 eval "$(starship init zsh)"
