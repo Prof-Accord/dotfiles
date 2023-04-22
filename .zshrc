@@ -154,8 +154,7 @@ fi
 typeset -U path PATH
 
 #### rbenvを初期化するためのスクリプト
-eval "$(rbenv init -)"
+eval "$(rbenv init - zsh)"
 
 ### starship初期化するためのスクリプト
 eval "$(starship init zsh)"
-
