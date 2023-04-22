@@ -1,6 +1,6 @@
 #!/bin/bash
 # 配置したい設定ファイル
-dotfiles=(.zshrc .zshenv .zprofile .vim .vimrc .git .config)
+dotfiles=(.zshrc .zshenv .zprofile .vim .vimrc .git .config .profile)
 
 #設定ファイルのシンボリックリンクをホームディレクトリ直下に
 #作成する
