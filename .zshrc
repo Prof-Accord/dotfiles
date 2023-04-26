@@ -153,7 +153,7 @@ fi
 ### 重複パスを登録しない
 typeset -U path PATH
 
-#### rbenvを初期化するためのスクリプト
+#### rbenvを初期化
 eval "$(rbenv init - zsh)"
 
 ### starship初期化
