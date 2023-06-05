@@ -153,11 +153,8 @@ fi
 ### 重複パスを登録しない
 typeset -U path PATH
 
-source /home/sh-watanabe/.profile
-
 #### rbenvを初期化
 eval "$(rbenv init - zsh)"
 
 ### starship初期化
 eval "$(starship init zsh)"
-
