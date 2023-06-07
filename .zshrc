@@ -145,7 +145,6 @@ function find_cd() {
 zle -N find_cd
 bindkey '^X' find_cd
 
-
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
