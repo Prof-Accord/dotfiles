@@ -27,6 +27,9 @@ alias bi='bundle install'
 alias bo='bundle outdated'
 alias bu='bundle update'
 alias rc='bundle exec rails c'
+# xclip
+alias pbcopy='xclip -selection c'
+alias pbpaste='xclip -selection c -o'
 
 ### zsh-completionsで補完機能をより強力にする
 # 他のzshと履歴を共有
