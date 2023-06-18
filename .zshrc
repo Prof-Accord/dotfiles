@@ -1,6 +1,8 @@
-### zsh本体の設定
+## zsh本体の設定
 
 # エイリアス
+## general
+alias e='exit'
 ## ls
 alias ls='ls --color=auto'
 alias ls='ls -G'
@@ -30,6 +32,8 @@ alias rc='bundle exec rails c'
 # xclip
 alias pbcopy='xclip -selection c'
 alias pbpaste='xclip -selection c -o'
+# vim
+alias v='vim'
 
 ### zsh-completionsで補完機能をより強力にする
 # 他のzshと履歴を共有

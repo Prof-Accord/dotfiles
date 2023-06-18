@@ -1,9 +1,29 @@
 #!/bin/bash
-# 配置したい設定ファイル
-dotfiles=(.zshrc .zshenv .zprofile .vim .vimrc .git .config .profile)
 
-#設定ファイルのシンボリックリンクをホームディレクトリ直下に
-#作成する
-for file in "${dotfiles[@]}"; do
-        ln -svf $file ~/
+set -eu
+
+for f in .??*
+do
+  [[ $f == ".git" ]] && continue
+  [[ $f == ".DS_Store" ]] && continue
+  [[ $f == ".vim" ]] && continue
+  [[ $f == ".config" ]] && continue
+  echo "$f"
+  ln -sf ~/dotfiles/$f ~/
 done
+# IGNORE_PATTERN="^\.(git|config)"
+
+# echo "Create dotfile links."
+# for dotfile in .??*; do
+# 		[[ $dotfile =~ $IGNORE_PATTERN ]] && continue
+#     ln -snfv "$(pwd)/$dotfile" "$HOME/$dotfile"
+# done
+
+# # create .config in $HOME
+# mkdir -p $HOME/.config
+# for dotfile in "$(ls .config)"; do
+#     [[ $dotfile =~ $IGNORE_PATTERN ]] && continue
+#     ln -snfv "$(pwd)/.config/$dotfile" "$HOME/.config/$dotfile"
+# done
+
+# echo "Success"

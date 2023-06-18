@@ -1,104 +1,99 @@
-" s”Ô†‚ð•\Ž¦
-set number
+syntax enable
+colorscheme monokai
 
-" “ú–{Œê‚É‘Î‰ž‚³‚¹‚é
-set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
-set fileformats=unix,dos,mac
-
-" ƒtƒ@ƒCƒ‹‚ðã‘‚«‚·‚é‘O‚ÉƒoƒbƒNƒAƒbƒv‚ðì‚é‚±‚Æ‚ð–³Œø‰»
+" ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä¸Šæ›¸ãã™ã‚‹å‰ã«ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ã‚’ä½œã‚‹ã“ã¨ã‚’ç„¡åŠ¹åŒ–
 set nowritebackup
-" ƒtƒ@ƒCƒ‹‚ðã‘‚«‚·‚é‘O‚ÉƒoƒbƒNƒAƒbƒv‚ðì‚é‚±‚Æ‚ð–³Œø‰»
+" ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä¸Šæ›¸ãã™ã‚‹å‰ã«ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ã‚’ä½œã‚‹ã“ã¨ã‚’ç„¡åŠ¹åŒ–
 set nobackup
-" vim ‚Ì‹éŒ`‘I‘ð‚Å•¶Žš‚ª–³‚­‚Ä‚à‰E‚Öi‚ß‚é
+" vim ã®çŸ©å½¢é¸æŠžã§æ–‡å­—ãŒç„¡ãã¦ã‚‚å³ã¸é€²ã‚ã‚‹
 set virtualedit=block
-" ‘}“üƒ‚[ƒh‚ÅƒoƒbƒNƒXƒy[ƒX‚Åíœ‚Å‚«‚é‚æ‚¤‚É‚·‚é
+" æŒ¿å…¥ãƒ¢ãƒ¼ãƒ‰ã§ãƒãƒƒã‚¯ã‚¹ãƒšãƒ¼ã‚¹ã§å‰Šé™¤ã§ãã‚‹ã‚ˆã†ã«ã™ã‚‹
 set backspace=indent,eol,start
-" ‘SŠp•¶Žšê—p‚ÌÝ’è
+" å…¨è§’æ–‡å­—å°‚ç”¨ã®è¨­å®š
 set ambiwidth=double
-" wildmenuƒIƒvƒVƒ‡ƒ“‚ð—LŒø(vimƒo[‚©‚çƒtƒ@ƒCƒ‹‚ð‘I‘ð‚Å‚«‚é)
+" wildmenuã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’æœ‰åŠ¹(vimãƒãƒ¼ã‹ã‚‰ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é¸æŠžã§ãã‚‹)
 set wildmenu
 
 "----------------------------------------
-" ŒŸõ
+" æ¤œç´¢
 "----------------------------------------
-" ŒŸõ‚·‚é‚Æ‚«‚É‘å•¶Žš¬•¶Žš‚ð‹æ•Ê‚µ‚È‚¢
+" æ¤œç´¢ã™ã‚‹ã¨ãã«å¤§æ–‡å­—å°æ–‡å­—ã‚’åŒºåˆ¥ã—ãªã„
 set ignorecase
-" ¬•¶Žš‚ÅŒŸõ‚·‚é‚Æ‘å•¶Žš‚Æ¬•¶Žš‚ð–³Ž‹‚µ‚ÄŒŸõ
+" å°æ–‡å­—ã§æ¤œç´¢ã™ã‚‹ã¨å¤§æ–‡å­—ã¨å°æ–‡å­—ã‚’ç„¡è¦–ã—ã¦æ¤œç´¢
 set smartcase
-" ŒŸõ‚ªƒtƒ@ƒCƒ‹––”ö‚Ü‚Åi‚ñ‚¾‚çAƒtƒ@ƒCƒ‹æ“ª‚©‚çÄ‚ÑŒŸõ
+" æ¤œç´¢ãŒãƒ•ã‚¡ã‚¤ãƒ«æœ«å°¾ã¾ã§é€²ã‚“ã ã‚‰ã€ãƒ•ã‚¡ã‚¤ãƒ«å…ˆé ­ã‹ã‚‰å†ã³æ¤œç´¢
 set wrapscan
-" ƒCƒ“ƒNƒŠƒƒ“ƒ^ƒ‹ŒŸõ (ŒŸõƒ[ƒh‚ÌÅ‰‚Ì•¶Žš‚ð“ü—Í‚µ‚½Žž“_‚ÅŒŸõ‚ªŠJŽn)
+" ã‚¤ãƒ³ã‚¯ãƒªãƒ¡ãƒ³ã‚¿ãƒ«æ¤œç´¢ (æ¤œç´¢ãƒ¯ãƒ¼ãƒ‰ã®æœ€åˆã®æ–‡å­—ã‚’å…¥åŠ›ã—ãŸæ™‚ç‚¹ã§æ¤œç´¢ãŒé–‹å§‹)
 set incsearch
-" ŒŸõŒ‹‰Ê‚ðƒnƒCƒ‰ƒCƒg•\Ž¦
+" æ¤œç´¢çµæžœã‚’ãƒã‚¤ãƒ©ã‚¤ãƒˆè¡¨ç¤º
 set hlsearch
 
 "----------------------------------------
-" •\Ž¦Ý’è
+" è¡¨ç¤ºè¨­å®š
 "----------------------------------------
-" ƒGƒ‰[ƒƒbƒZ[ƒW‚Ì•\Ž¦Žž‚Éƒr[ƒv‚ð–Â‚ç‚³‚È‚¢
+" ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã®è¡¨ç¤ºæ™‚ã«ãƒ“ãƒ¼ãƒ—ã‚’é³´ã‚‰ã•ãªã„
 set noerrorbells
-" Windows‚ÅƒpƒX‚Ì‹æØ‚è•¶Žš‚ðƒXƒ‰ƒbƒVƒ…‚Åˆµ‚¤
+" Windowsã§ãƒ‘ã‚¹ã®åŒºåˆ‡ã‚Šæ–‡å­—ã‚’ã‚¹ãƒ©ãƒƒã‚·ãƒ¥ã§æ‰±ã†
 set shellslash
-" ‘Î‰ž‚·‚éŠ‡ŒÊ‚âƒuƒŒ[ƒX‚ð•\Ž¦
+" å¯¾å¿œã™ã‚‹æ‹¬å¼§ã‚„ãƒ–ãƒ¬ãƒ¼ã‚¹ã‚’è¡¨ç¤º
 set showmatch matchtime=1
-" ƒCƒ“ƒfƒ“ƒg•û–@‚Ì•ÏX
+" ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆæ–¹æ³•ã®å¤‰æ›´
 set cinoptions+=:0
-" ƒƒbƒZ[ƒW•\Ž¦—“‚ð2sŠm•Û
+" ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸è¡¨ç¤ºæ¬„ã‚’2è¡Œç¢ºä¿
 set cmdheight=2
-" ƒXƒe[ƒ^ƒXs‚ðí‚É•\Ž¦
+" ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹è¡Œã‚’å¸¸ã«è¡¨ç¤º
 set laststatus=2
-" ƒEƒBƒ“ƒhƒE‚Ì‰E‰º‚É‚Ü‚¾ŽÀs‚µ‚Ä‚¢‚È‚¢“ü—Í’†‚ÌƒRƒ}ƒ“ƒh‚ð•\Ž¦
+" ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®å³ä¸‹ã«ã¾ã å®Ÿè¡Œã—ã¦ã„ãªã„å…¥åŠ›ä¸­ã®ã‚³ãƒžãƒ³ãƒ‰ã‚’è¡¨ç¤º
 set showcmd
-" È—ª‚³‚ê‚¸‚É•\Ž¦
+" çœç•¥ã•ã‚Œãšã«è¡¨ç¤º
 set display=lastline
-" ƒ^ƒu•¶Žš‚ð CTRL-I ‚Å•\Ž¦‚µAs––‚É $ ‚Å•\Ž¦‚·‚é
+" ã‚¿ãƒ–æ–‡å­—ã‚’ CTRL-I ã§è¡¨ç¤ºã—ã€è¡Œæœ«ã« $ ã§è¡¨ç¤ºã™ã‚‹
 set list
-" s––‚ÌƒXƒy[ƒX‚ð‰ÂŽ‹‰»
+" è¡Œæœ«ã®ã‚¹ãƒšãƒ¼ã‚¹ã‚’å¯è¦–åŒ–
 set listchars=tab:^\ ,trail:~
-" ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“‚Ì—š—ð‚ð10000Œ•Û‘¶‚·‚é
+" ã‚³ãƒžãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ã®å±¥æ­´ã‚’10000ä»¶ä¿å­˜ã™ã‚‹
 set history=10000
-" ƒRƒƒ“ƒg‚ÌF‚ð…F
+" ã‚³ãƒ¡ãƒ³ãƒˆã®è‰²ã‚’æ°´è‰²
 hi Comment ctermfg=3
-" “ü—Íƒ‚[ƒh‚ÅTabƒL[‰Ÿ‰ºŽž‚É”¼ŠpƒXƒy[ƒX‚ð‘}“ü
+" å…¥åŠ›ãƒ¢ãƒ¼ãƒ‰ã§Tabã‚­ãƒ¼æŠ¼ä¸‹æ™‚ã«åŠè§’ã‚¹ãƒšãƒ¼ã‚¹ã‚’æŒ¿å…¥
 set expandtab
-" ƒCƒ“ƒfƒ“ƒg•
+" ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆå¹…
 set shiftwidth=2
-" ƒ^ƒuƒL[‰Ÿ‰ºŽž‚É‘}“ü‚³‚ê‚é•¶Žš•‚ðŽw’è
+" ã‚¿ãƒ–ã‚­ãƒ¼æŠ¼ä¸‹æ™‚ã«æŒ¿å…¥ã•ã‚Œã‚‹æ–‡å­—å¹…ã‚’æŒ‡å®š
 set softtabstop=2
-" ƒtƒ@ƒCƒ‹“à‚É‚ ‚éƒ^ƒu•¶Žš‚Ì•\Ž¦•
+" ãƒ•ã‚¡ã‚¤ãƒ«å†…ã«ã‚ã‚‹ã‚¿ãƒ–æ–‡å­—ã®è¡¨ç¤ºå¹…
 set tabstop=2
-" ƒc[ƒ‹ƒo[‚ð”ñ•\Ž¦‚É‚·‚é
+" ãƒ„ãƒ¼ãƒ«ãƒãƒ¼ã‚’éžè¡¨ç¤ºã«ã™ã‚‹
 set guioptions-=T
-" y‚ÅƒRƒs[‚µ‚½Žž‚ÉƒNƒŠƒbƒvƒ{[ƒh‚É“ü‚é
+" yã§ã‚³ãƒ”ãƒ¼ã—ãŸæ™‚ã«ã‚¯ãƒªãƒƒãƒ—ãƒœãƒ¼ãƒ‰ã«å…¥ã‚‹
 set guioptions+=a
-" ƒƒjƒ…[ƒo[‚ð”ñ•\Ž¦‚É‚·‚é
+" ãƒ¡ãƒ‹ãƒ¥ãƒ¼ãƒãƒ¼ã‚’éžè¡¨ç¤ºã«ã™ã‚‹
 set guioptions-=m
-" ‰EƒXƒNƒ[ƒ‹ƒo[‚ð”ñ•\Ž¦
+" å³ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ¼ã‚’éžè¡¨ç¤º
 set guioptions+=R
-" ‘Î‰ž‚·‚éŠ‡ŒÊ‚ð‹­’²•\Ž¦
+" å¯¾å¿œã™ã‚‹æ‹¬å¼§ã‚’å¼·èª¿è¡¨ç¤º
 set showmatch
-" ‰üsŽž‚É“ü—Í‚³‚ê‚½s‚Ì––”ö‚É‡‚í‚¹‚ÄŽŸ‚Ìs‚ÌƒCƒ“ƒfƒ“ƒg‚ð‘Œ¸‚·‚é
+" æ”¹è¡Œæ™‚ã«å…¥åŠ›ã•ã‚ŒãŸè¡Œã®æœ«å°¾ã«åˆã‚ã›ã¦æ¬¡ã®è¡Œã®ã‚¤ãƒ³ãƒ‡ãƒ³ãƒˆã‚’å¢—æ¸›ã™ã‚‹
 set smartindent
-" ƒXƒƒbƒvƒtƒ@ƒCƒ‹‚ðì¬‚µ‚È‚¢
+" ã‚¹ãƒ¯ãƒƒãƒ—ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œæˆã—ãªã„
 set noswapfile
-" ŒŸõ‚Éƒ}ƒbƒ`‚µ‚½sˆÈŠO‚ðÜ‚è‚½‚½‚Þ(ƒtƒH[ƒ‹ƒh‚·‚é)‹@”\
+" æ¤œç´¢ã«ãƒžãƒƒãƒã—ãŸè¡Œä»¥å¤–ã‚’æŠ˜ã‚ŠãŸãŸã‚€(ãƒ•ã‚©ãƒ¼ãƒ«ãƒ‰ã™ã‚‹)æ©Ÿèƒ½
 set nofoldenable
-" ƒ^ƒCƒgƒ‹‚ð•\Ž¦
+" ã‚¿ã‚¤ãƒˆãƒ«ã‚’è¡¨ç¤º
 set title
-" s”Ô†‚Ì•\Ž¦
+" è¡Œç•ªå·ã®è¡¨ç¤º
 set number
-" ƒ„ƒ“ƒN‚ÅƒNƒŠƒbƒvƒ{[ƒh‚ÉƒRƒs[
+" ãƒ¤ãƒ³ã‚¯ã§ã‚¯ãƒªãƒƒãƒ—ãƒœãƒ¼ãƒ‰ã«ã‚³ãƒ”ãƒ¼
 set clipboard=unnamed,autoselect
-" Esc‚Ì2‰ñ‰Ÿ‚µ‚ÅƒnƒCƒ‰ƒCƒgÁ‹Ž
+" Escã®2å›žæŠ¼ã—ã§ãƒã‚¤ãƒ©ã‚¤ãƒˆæ¶ˆåŽ»
 nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
-" ƒVƒ“ƒ^ƒbƒNƒXƒnƒCƒ‰ƒCƒg
+" ã‚·ãƒ³ã‚¿ãƒƒã‚¯ã‚¹ãƒã‚¤ãƒ©ã‚¤ãƒˆ
 syntax on
-" ‚·‚×‚Ä‚Ì”‚ð10i”‚Æ‚µ‚Äˆµ‚¤
+" ã™ã¹ã¦ã®æ•°ã‚’10é€²æ•°ã¨ã—ã¦æ‰±ã†
 set nrformats=
-" s‚ð‚Ü‚½‚¢‚ÅˆÚ“®
+" è¡Œã‚’ã¾ãŸã„ã§ç§»å‹•
 set whichwrap=b,s,h,l,<,>,[,],~
-" ƒoƒbƒtƒ@ƒXƒNƒ[ƒ‹
+" ãƒãƒƒãƒ•ã‚¡ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«
 set mouse=a
 
 " auto reload .vimrc
@@ -115,14 +110,14 @@ augroup auto_comment_off
   autocmd BufEnter * setlocal formatoptions-=o
 augroup END
 
-" HTML/XML•Â‚¶ƒ^ƒOŽ©“®•âŠ®
+" HTML/XMLé–‰ã˜ã‚¿ã‚°è‡ªå‹•è£œå®Œ
 augroup MyXML
   autocmd!
   autocmd Filetype xml inoremap <buffer> </ </<C-x><C-o>
   autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
 augroup END
 
-" •ÒW‰ÓŠ‚ÌƒJ[ƒ\ƒ‹‚ð‹L‰¯
+" ç·¨é›†ç®‡æ‰€ã®ã‚«ãƒ¼ã‚½ãƒ«ã‚’è¨˜æ†¶
 if has("autocmd")
   augroup redhat
     " In text files, always limit the width of text to 78 characters
@@ -134,3 +129,7 @@ if has("autocmd")
     \ endif
   augroup END
 endif
+
+call plug#begin()
+Plug 'Mofiqul/dracula.nvim'
+call plug#end()
