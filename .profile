@@ -28,4 +28,4 @@ fi
 
 export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin
 
-eval zsh
+zsh
