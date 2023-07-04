@@ -1,18 +1,14 @@
-## zsh本体の設定
+# zsh本体の設定
 
-# エイリアス
-## general
-alias e='exit'
-## ls
+# ls
 alias ls='ls --color=auto'
-alias ls='ls -G'
-alias ll='ls -alF'
-alias ll='ls -lh'
-alias ll='ls -l'
-alias la='ls -A'
-alias la='ls -a'
-alias l='ls -CF'
-## git
+# 全てのファイルを種類の記号付きで表示
+alias la='ls -AF'
+# 全てのファイルを長い形式で表示する
+alias ll='ls -AlF'
+# ディレクトリを指定すると回帰的に表示
+alias lr='ls -ARF'
+# git
 alias g='git'
 alias ga='git add'
 alias gd='git diff'
@@ -29,13 +25,37 @@ alias bi='bundle install'
 alias bo='bundle outdated'
 alias bu='bundle update'
 alias rc='bundle exec rails c'
+# brew
+alias brd='brew update'
+alias brg='brew update'
+alias bri='brew install'
+alias bru='brew uninstall'
 # xclip
 alias pbcopy='xclip -selection c'
 alias pbpaste='xclip -selection c -o'
 # vim
 alias v='vim'
+# general
 
 ### zsh-completionsで補完機能をより強力にする
+# ディレクトリ名の補完で末尾の / を自動的に付加し、次の補完に備える
+setopt auto_param_slash
+# ファイル名の展開でディレクトリにマッチした場合 末尾に / を付加
+setopt mark_dirs
+# 補完候補一覧でファイルの種別を識別マーク表示 (訳注:ls -F の記号)
+setopt list_types
+# 補完キー連打で順に補完候補を自動で補完
+setopt auto_menu
+# カッコの対応などを自動的に補完
+setopt auto_param_keys
+# コマンドラインでも # 以降をコメントと見なす
+setopt interactive_comments
+# 語の途中でもカーソル位置で補完
+setopt complete_in_word
+# カーソル位置は保持したままファイル名一覧を順次その場で表示
+setopt always_last_prompt
+# 展開する前に補完候補を出させる(Ctrl-iで補完するようにする)
+setopt globdots
 # 他のzshと履歴を共有
 setopt inc_append_history
 # 同時に起動しているzshの間でhistoryを共有する
@@ -44,10 +64,10 @@ setopt share_history
 setopt hist_reduce_blanks
 # 同じコマンドをhistoryに残さない
 setopt hist_ignore_all_dups
-# 文字コードを指定v
-export LANG=ja_JP.UTF-8
 # 日本語ファイル名を表示可能にする
 setopt print_eight_bit
+# 文字コードを指定
+export LANG=ja_JP.UTF-8
 # cd無しでもディレクトリ移動
 setopt auto_cd
 # cd -で以前移動したディレクトリを表示
@@ -67,10 +87,8 @@ autoload -Uz compinit && compinit
 # 小文字でも大文字にマッチ
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
-
 # 補完候補をTabや矢印で選択可能
 zstyle ':completion:*:default' menu select=1
-
 # lsコマンドで色分けする
 zstyle ':completion:*' list-colors $LSCOLORS
 
@@ -83,6 +101,7 @@ if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
         print -P "%F{33} %F{34}Installation successful.%f%b" || \
         print -P "%F{160} The clone has failed.%f%b"
 fi
+
 source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
@@ -161,6 +180,9 @@ export EDITOR="vim"
 
 # 重複パスを登録しない
 typeset -gU path PATH
+
+## lsコマンド色変更、フォルダ:黄色、exe：赤、ファイル：紫
+export LS_COLORS='di=33:ex=31:fi=35'
 
 # rbenvを初期化
 eval "$(rbenv init - zsh)"
