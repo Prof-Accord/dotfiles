@@ -1,29 +1,19 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-set -eu
+# 未定義な変数があったら途中で終了する
+set -u
 
-for f in .??*
-do
-  [[ $f == ".git" ]] && continue
-  [[ $f == ".DS_Store" ]] && continue
-  [[ $f == ".vim" ]] && continue
-  [[ $f == ".config" ]] && continue
-  echo "$f"
-  ln -sf ~/dotfiles/$f ~/
+# 今のディレクトリ
+# dotfilesディレクトリに移動する
+BASEDIR=$(dirname $0)
+cd $BASEDIR
+
+# dotfilesディレクトリにある、ドットから始まり2文字以上の名前のファイルに対して
+for f in .??*; do
+    [ "$f" = ".git" ] && continue
+    [ "$f" = ".gitconfig.local.template" ] && continue
+    [ "$f" = ".gitmodules" ] && continue
+
+    # シンボリックリンクを貼る
+    ln -snfv ${PWD}/"$f" ~/
 done
-# IGNORE_PATTERN="^\.(git|config)"
-
-# echo "Create dotfile links."
-# for dotfile in .??*; do
-# 		[[ $dotfile =~ $IGNORE_PATTERN ]] && continue
-#     ln -snfv "$(pwd)/$dotfile" "$HOME/$dotfile"
-# done
-
-# # create .config in $HOME
-# mkdir -p $HOME/.config
-# for dotfile in "$(ls .config)"; do
-#     [[ $dotfile =~ $IGNORE_PATTERN ]] && continue
-#     ln -snfv "$(pwd)/.config/$dotfile" "$HOME/.config/$dotfile"
-# done
-
-# echo "Success"
