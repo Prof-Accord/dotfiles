@@ -8,7 +8,7 @@
   "semantic_status": {},
   "enable_telemetry": true,
   "user_understands_that_enabling_tabnine_cloud_sends_code_to_tabnine_servers": true,
-  "deep_completions_work_mode": "Hybrid",
+  "deep_completions_work_mode": "LocalOnly",
   "hosted_deep_completions_enabled": "Disabled",
   "tabnine_cloud_host": null,
   "tabnine_cloud_certificate_domain": null,

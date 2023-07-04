@@ -35,7 +35,6 @@ alias pbcopy='xclip -selection c'
 alias pbpaste='xclip -selection c -o'
 # vim
 alias v='vim'
-# general
 
 ### zsh-completionsで補完機能をより強力にする
 # ディレクトリ名の補完で末尾の / を自動的に付加し、次の補完に備える
@@ -118,13 +117,10 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=244"
 
 # 標準でサポートされていないコマンド用の補完
 zinit light zsh-users/zsh-completions
-
 # Ctrl+r でコマンド履歴を検索
 zinit light zdharma/history-search-multi-word
-
 # ターミナルを256色使用可能にする
 zinit light chrissicool/zsh-256color
-
 # pecoやpercolのラッパー
 zinit light mollifier/anyframe
 
