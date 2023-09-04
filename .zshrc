@@ -63,11 +63,6 @@ setopt share_history
 setopt hist_reduce_blanks
 # 同じコマンドをhistoryに残さない
 setopt hist_ignore_all_dups
-<<<<<<< HEAD
-=======
-# 文字コードを指定
-export LANG=ja_JP.UTF-8
->>>>>>> main2
 # 日本語ファイル名を表示可能にする
 setopt print_eight_bit
 # 文字コードを指定
